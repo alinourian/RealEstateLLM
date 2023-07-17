@@ -21,8 +21,5 @@ class Scanner:
             except ValueError:
                 response = "invalid input"
         else:                           # string input
-            response = self.get_string_label(input_query)
+            response = input_query
         return response
-
-    def get_string_label(self, command):
-        return len(command)

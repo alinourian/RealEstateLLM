@@ -4,11 +4,11 @@ buy_rent = {
     'question': 'Do you want to buy or rent?',
     'valid_response': {0: 'rent', 1: 'buy'},
     'parent': '',
-    'children': ['budget-rent', 'budget-buy']
+    'children': ['rent__budget', 'buy__budget-buy']
 }
 
-budget_rent = {
-    'name': 'budget-rent',
+rent__budget = {
+    'name': 'rent__budget',
     'type': 'scroll',
     'question': 'How much money do you have per month?',
     'valid_response': {0: 1000, 1: 5000},
@@ -16,8 +16,8 @@ budget_rent = {
     'children': ['time']
 }
 
-budget_buy = {
-    'name': 'budget-buy',
+buy__budget = {
+    'name': 'buy__budget',
     'type': 'scroll',
     'question': 'How much money do you have?',
     'valid_response': {0: 50000, 1: 500000},
@@ -27,10 +27,10 @@ budget_buy = {
 
 time = {
     'name': 'time',
-    'type': 'option',
+    'type': 'input',
     'question': 'How long are you looking to rent the property for?',
     'valid_response': {0: 'less than 6 month', 1: '6 month', 2: '1 year'},
-    'parent': 'budget-rent',
+    'parent': 'rent__budget',
     'children': ['rent__property-type', 'rent__property-type', 'rent__property-type']
 }
 
@@ -39,7 +39,7 @@ ready_off_plan = {
     'type': 'option',
     'question': 'Do you want it ready or off-plan?',
     'valid_response': {0: 'ready', 1: 'off-plan'},
-    'parent': 'budget-buy',
+    'parent': 'buy__budget',
     'children': ['buy__property-type', 'buy__property-type']
 }
 
@@ -67,7 +67,7 @@ rent__square = {
     'question': 'What is the square footage of the house you are interested in?',
     'valid_response': {0: 30, 1: 300},
     'parent': 'rent__property-type',
-    'children': ['rent__beds']
+    'children': ['rent__room']
 }
 
 buy__square = {
@@ -76,11 +76,11 @@ buy__square = {
     'question': 'What is the square footage of the house you are interested in?',
     'valid_response': {0: 30, 1: 300},
     'parent': 'buy__property-type',
-    'children': ['buy__beds']
+    'children': ['buy__room']
 }
 
-rent__beds = {
-    'name': 'rent__beds',
+rent__room = {
+    'name': 'rent__room',
     'type': 'option',
     'question': 'How many bedrooms do you want?',
     'valid_response': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5},
@@ -88,9 +88,9 @@ rent__beds = {
     'children': [None] * 5
 }
 
-buy__beds = {
-    'name': 'buy__beds',
-    'type': 'option',
+buy__room = {
+    'name': 'buy__room',
+    'type': 'input',
     'question': 'How many bedrooms do you want?',
     'valid_response': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5},
     'parent': 'buy__square-root',
@@ -99,14 +99,14 @@ buy__beds = {
 
 menus = {
     buy_rent['name']: buy_rent,
-    budget_buy['name']: budget_buy,
-    budget_rent['name']: budget_rent,
+    buy__budget['name']: buy__budget,
+    rent__budget['name']: rent__budget,
     time['name']: time,
     ready_off_plan['name']: ready_off_plan,
     rent__property_type['name']: rent__property_type,
     buy__property_type['name']: buy__property_type,
     rent__square['name']: rent__square,
     buy__square['name']: buy__square,
-    rent__beds['name']: rent__beds,
-    buy__beds['name']: buy__beds
+    rent__room['name']: rent__room,
+    buy__room['name']: buy__room
 }

@@ -1,4 +1,5 @@
 from enum import Enum
+from model.languageModels import get_model_response
 
 
 class NodeTypes(Enum):
@@ -154,4 +155,15 @@ class InputNode(Node):
 
     def show(self):
         self.printer(self.question)
+        self.printer(self.valid_responses)
         self.printer('Input Answer: ')
+
+    def execute(self, response):
+        model_name = self.name.split("__")[-1]
+        idx_pred, response_pred = get_model_response(prompt=response, model_name=model_name)
+        if self.is_valid_response(idx_pred):
+            next_node_name = self.children.get(idx_pred, None)
+            return True, next_node_name, response_pred
+        else:
+            return False, None, response_pred
+

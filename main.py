@@ -1,4 +1,5 @@
 from controller import Menu
+from model.languageModels import ClassifierModel
 
 
 def run_program():

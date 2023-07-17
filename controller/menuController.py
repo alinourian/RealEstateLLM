@@ -50,10 +50,10 @@ class Menu:
         while True:
             print('=' * 50)
             node.show()
-            response = self.scanner.scan(node.node_type, ret=[self.quit_, self.back])
-            if response == self.quit_:
+            input_query = self.scanner.scan(node.node_type, ret=[self.quit_, self.back])
+            if input_query == self.quit_:
                 break
-            elif response == self.back:
+            elif input_query == self.back:
                 node_parent_name = node.parent
                 node_info = menus.get(node_parent_name, None)
                 if node_info is not None:
@@ -62,7 +62,7 @@ class Menu:
                 else:
                     break
             else:
-                true_response, next_node_name, response = node.execute(response)
+                true_response, next_node_name, response = node.execute(input_query)
                 print(f'true_response={true_response}, next_node_name={next_node_name}, response={response}')
                 if true_response:
                     self.output[node.name] = response
