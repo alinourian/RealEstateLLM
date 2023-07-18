@@ -4,7 +4,7 @@ buy_rent = {
     'question': 'Do you want to buy or rent?',
     'valid_response': {0: 'rent', 1: 'buy'},
     'parent': '',
-    'children': ['rent__budget', 'buy__budget-buy']
+    'children': ['rent__budget', 'buy__budget']
 }
 
 rent__budget = {
