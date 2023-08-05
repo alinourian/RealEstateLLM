@@ -17,7 +17,7 @@ class Menu:
         if node_type == NodeTypes.OPTION.value:
             node = OptionNode(
                 name=node_info['name'],
-                question=node_info['question'],
+                question=node_info['question-' + self.default_language],
                 valid_responses=node_info['valid_response'],
                 parent=node_info['parent'],
                 children=node_info['children'],
@@ -27,7 +27,7 @@ class Menu:
         elif node_type == NodeTypes.SCROLL.value:
             node = ScrollNode(
                 name=node_info['name'],
-                question=node_info['question'],
+                question=node_info['question-' + self.default_language],
                 valid_responses=node_info['valid_response'],
                 parent=node_info['parent'],
                 children=node_info['children'],
@@ -37,7 +37,7 @@ class Menu:
         else:
             node = InputNode(
                 name=node_info['name'],
-                question=node_info['question'],
+                question=node_info['question-' + self.default_language],
                 valid_responses=node_info['valid_response'],
                 parent=node_info['parent'],
                 children=node_info['children'],
