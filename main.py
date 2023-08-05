@@ -9,7 +9,7 @@ def run_program():
     menu = Menu(root_name='buy/rent', default_language=default_language)
     menu.start()
     print('=' * 50)
-    print('Output', menu.output)
+    print('Output:', menu.output)
 
 
 if __name__ == '__main__':

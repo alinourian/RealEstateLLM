@@ -18,6 +18,7 @@ class Menu:
             node = OptionNode(
                 name=node_info['name'],
                 question=node_info['question-' + self.default_language],
+                options=node_info['valid_response-' + self.default_language],
                 valid_responses=node_info['valid_response'],
                 parent=node_info['parent'],
                 children=node_info['children'],
@@ -28,6 +29,7 @@ class Menu:
             node = ScrollNode(
                 name=node_info['name'],
                 question=node_info['question-' + self.default_language],
+                options=node_info['valid_response-' + self.default_language],
                 valid_responses=node_info['valid_response'],
                 parent=node_info['parent'],
                 children=node_info['children'],
@@ -38,6 +40,7 @@ class Menu:
             node = InputNode(
                 name=node_info['name'],
                 question=node_info['question-' + self.default_language],
+                options=node_info['valid_response-' + self.default_language],
                 valid_responses=node_info['valid_response'],
                 parent=node_info['parent'],
                 children=node_info['children'],

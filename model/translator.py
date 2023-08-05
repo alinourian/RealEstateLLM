@@ -11,4 +11,4 @@ class Translator:
     def translate_text(self, text, tgt_language="en"):
         # result = self.client.translate(text, target_language=tgt_language)
         # return result["translatedText"]
-        return "rent a villa of 4 bedrooms for 6 months"
+        return "rent a villa of 4 bedrooms for less than 6 months"

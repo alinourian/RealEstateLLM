@@ -14,6 +14,7 @@ class Node:
             name: str,
             node_type: str,
             question: str,
+            options: list,
             valid_responses: dict,
             parent,
             children: list,
@@ -23,6 +24,7 @@ class Node:
         self.name = name
         self.node_type = node_type
         self.question = question
+        self.options = options
         self.valid_responses = valid_responses
         self.parent = parent
         self.children = self.add_children(children)
@@ -55,6 +57,7 @@ class OptionNode(Node):
             self,
             name,
             question,
+            options,
             valid_responses,
             parent,
             children,
@@ -65,6 +68,7 @@ class OptionNode(Node):
             name,
             NodeTypes.OPTION.value,
             question,
+            options,
             valid_responses,
             parent,
             children,
@@ -75,7 +79,7 @@ class OptionNode(Node):
     def show(self):
         self.printer(self.question)
         for i, option in self.valid_responses.items():
-            self.printer(f'{i}. {option}')
+            self.printer(f'{i}. {self.options[i]}')
         self.printer('Option Answer: ')
 
 
@@ -84,6 +88,7 @@ class ScrollNode(Node):
             self,
             name,
             question,
+            options,
             valid_responses,
             parent,
             children,
@@ -94,6 +99,7 @@ class ScrollNode(Node):
             name,
             NodeTypes.SCROLL.value,
             question,
+            options,
             valid_responses,
             parent,
             children,
@@ -113,6 +119,7 @@ class ScrollNode(Node):
 
     def show(self):
         self.printer(self.question)
+        self.printer(self.options)
         self.printer(self.valid_responses)
         self.printer(f'Scroll Answer (min={self.min_value}, max={self.max_value}): ')
 
@@ -136,6 +143,7 @@ class InputNode(Node):
             self,
             name,
             question,
+            options,
             valid_responses,
             parent,
             children,
@@ -146,6 +154,7 @@ class InputNode(Node):
             name,
             NodeTypes.INPUT.value,
             question,
+            options,
             valid_responses,
             parent,
             children,
@@ -155,6 +164,7 @@ class InputNode(Node):
 
     def show(self):
         self.printer(self.question)
+        self.printer(self.options)
         self.printer(self.valid_responses)
         self.printer('Input Answer: ')
 

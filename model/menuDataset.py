@@ -10,6 +10,13 @@ buy_rent = {
     'question-ru': 'Вы хотите купить или арендовать?',
     'question-hi': 'क्या आप खरीदना या किराये पर लेना चाहते हैं?',
     'valid_response': {0: 'rent', 1: 'buy'},
+    'valid_response-en': ['rent', 'buy'],
+    'valid_response-ar': ['الإيجار', 'الشراء'],
+    'valid_response-fa': ['اجاره', 'خرید'],
+    'valid_response-ur': ['کرایہ', 'خریدنا'],
+    'valid_response-zh-CN': ['租金', '购买'],
+    'valid_response-ru': ['аренда', 'купить'],
+    'valid_response-hi': ['किराया', 'खरीदो'],
     'parent': '',
     'children': ['rent__budget', 'buy__budget']
 }
@@ -26,6 +33,13 @@ rent__budget = {
     'question-ru': 'Сколько у вас денег в месяц на аренду?',
     'question-hi': 'आपके पास प्रति माह किराए के लिए कितना पैसा है?',
     'valid_response': {0: 1000, 1: 5000},
+    'valid_response-en': ['1000', '5000'],
+    'valid_response-ar': ['۱۰۰۰', '٥٠٠٠'],
+    'valid_response-fa': ['۱۰۰۰', '۵۰۰۰'],
+    'valid_response-ur': ['1000', '5000'],
+    'valid_response-zh-CN': ['1000', '5000'],
+    'valid_response-ru': ['1000', '5000'],
+    'valid_response-hi': ['1000', '5000'],
     'parent': 'buy/rent',
     'children': ['time']
 }
@@ -42,6 +56,13 @@ buy__budget = {
     'question-ru': 'Сколько у тебя денег?',
     'question-hi': 'आपके पास कितना पैसा है?',
     'valid_response': {0: 50000, 1: 500000},
+    'valid_response-en': ['50000', '500000'],
+    'valid_response-ar': ['٥۰۰۰۰', '٥۰۰۰۰۰'],
+    'valid_response-fa': ['۵۰۰۰۰', '۵۰۰۰۰۰'],
+    'valid_response-ur': ['50000', '500000'],
+    'valid_response-zh-CN': ['50000', '500000'],
+    'valid_response-ru': ['50000', '500000'],
+    'valid_response-hi': ['50000', '500000'],
     'parent': 'buy/rent',
     'children': ['ready/off-plane']
 }
@@ -57,7 +78,14 @@ time = {
     'question-zh-CN': '您打算租用该房产多久？',
     'question-ru': 'На какой срок вы планируете арендовать недвижимость?',
     'question-hi': 'आप कितने समय के लिए संपत्ति किराए पर लेना चाहते हैं?',
-    'valid_response': {0: 'less than 6 month', 1: '6 month', 2: '1 year'},
+    'valid_response': {0: 'less than 6 months', 1: '6 months', 2: '1 year'},
+    'valid_response-en': ['less than 6 months', '6 months', '1 year'],
+    'valid_response-ar': ['أقل من ٦ أشهر', '٦ شهور', '۱ سنة'],
+    'valid_response-fa': ['کمتر از ۶ ماه', '۶ ماه', '۱ سال'],
+    'valid_response-ur': ['6 ماہ سے کم', '6 ماہ', '1 سال'],
+    'valid_response-zh-CN': ['少于6个月', '6个月', '1年'],
+    'valid_response-ru': ['менее 6 месяцев', '6 месяцев', '1 год'],
+    'valid_response-hi': ['6 महीने से कम', '6 महीने', '1 वर्ष'],
     'parent': 'rent__budget',
     'children': ['rent__property-type', 'rent__property-type', 'rent__property-type']
 }
@@ -67,12 +95,12 @@ ready_off_plan = {
     'type': 'option',
     'question': 'Do you want it ready or off-plan?',
     'question-en': 'Do you want it ready or off-plan?',
-    'question-ar': '',
+    'question-ar': 'ready or off-plan? (Not translate!)',
     'question-fa': 'آیا قصد پیش‌خرید دارید یا واحد آماده می‌خواهید؟',
-    'question-ur': '',
-    'question-zh-CN': '',
-    'question-ru': '',
-    'question-hi': '',
+    'question-ur': 'ready or off-plan? (Not translate!)',
+    'question-zh-CN': 'ready or off-plan? (Not translate!)',
+    'question-ru': 'ready or off-plan? (Not translate!)',
+    'question-hi': 'ready or off-plan? (Not translate!)',
     'valid_response': {0: 'ready', 1: 'off-plan'},
     'parent': 'buy__budget',
     'children': ['buy__property-type', 'buy__property-type']
@@ -90,6 +118,13 @@ rent__property_type = {
     'question-ru': 'Какой тип недвижимости вы хотите?',
     'question-hi': 'आप किस प्रकार की संपत्ति चाहते हैं?',
     'valid_response': {0: 'Apartment', 1: 'vila'},
+    'valid_response-en': ['Apartment', 'vila'],
+    'valid_response-ar': ['شقة', 'فيلا'],
+    'valid_response-fa': ['آپارتمان', 'ویلا'],
+    'valid_response-ur': ['اپارٹمنٹ', 'ویلا۔'],
+    'valid_response-zh-CN': ['公寓', '维拉'],
+    'valid_response-ru': ['Квартира', 'вила'],
+    'valid_response-hi': ['अपार्टमेंट', 'विला'],
     'parent': 'time',
     'children': ['rent__square-root', 'rent__square-root']
 }
@@ -106,6 +141,13 @@ buy__property_type = {
     'question-ru': 'Какой тип недвижимости вы хотите?',
     'question-hi': 'आप किस प्रकार की संपत्ति चाहते हैं?',
     'valid_response': {0: 'Apartment', 1: 'vila'},
+    'valid_response-en': ['Apartment', 'vila'],
+    'valid_response-ar': ['شقة', 'فيلا'],
+    'valid_response-fa': ['آپارتمان', 'ویلا'],
+    'valid_response-ur': ['اپارٹمنٹ', 'ویلا۔'],
+    'valid_response-zh-CN': ['公寓', '维拉'],
+    'valid_response-ru': ['Квартира', 'вила'],
+    'valid_response-hi': ['अपार्टमेंट', 'विला'],
     'parent': 'ready/off-plane',
     'children': ['buy__square-root', 'buy__square-root']
 }
@@ -122,6 +164,13 @@ rent__square = {
     'question-ru': 'Какая площадь интересующего вас дома?',
     'question-hi': 'जिस घर में आपकी रुचि है उसका वर्गाकार फ़ुटेज क्या है?',
     'valid_response': {0: 30, 1: 300},
+    'valid_response-en': ['30', '300'],
+    'valid_response-ar': ['٣٠', '٣٠٠'],
+    'valid_response-fa': ['۳۰', '۳۰۰'],
+    'valid_response-ur': ['30', '300'],
+    'valid_response-zh-CN': ['30', '300'],
+    'valid_response-ru': ['30', '300'],
+    'valid_response-hi': ['30', '300'],
     'parent': 'rent__property-type',
     'children': ['rent__room']
 }
@@ -138,6 +187,13 @@ buy__square = {
     'question-ru': 'Какая площадь интересующего вас дома?',
     'question-hi': 'जिस घर में आपकी रुचि है उसका वर्गाकार फ़ुटेज क्या है?',
     'valid_response': {0: 30, 1: 300},
+    'valid_response-en': ['30', '300'],
+    'valid_response-ar': ['٣٠', '٣٠٠'],
+    'valid_response-fa': ['۳۰', '۳۰۰'],
+    'valid_response-ur': ['30', '300'],
+    'valid_response-zh-CN': ['30', '300'],
+    'valid_response-ru': ['30', '300'],
+    'valid_response-hi': ['30', '300'],
     'parent': 'buy__property-type',
     'children': ['buy__room']
 }
@@ -154,6 +210,13 @@ rent__room = {
     'question-ru': 'Сколько спален вы хотите?',
     'question-hi': 'आप कितने शयनकक्ष चाहते हैं?',
     'valid_response': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5},
+    'valid_response-en': ['1', '2', '3', '4', '5'],
+    'valid_response-ar': ['۱', '٢', '٣', '٤', '٥'],
+    'valid_response-fa': ['۱', '۲', '۳', '۴', '۵'],
+    'valid_response-ur': ['1', '2', '3', '4', '5'],
+    'valid_response-zh-CN': ['1', '2', '3', '4', '5'],
+    'valid_response-ru': ['1', '2', '3', '4', '5'],
+    'valid_response-hi': ['1', '2', '3', '4', '5'],
     'parent': 'rent__square-root',
     'children': [None] * 5
 }
@@ -170,6 +233,13 @@ buy__room = {
     'question-ru': 'Сколько спален вы хотите?',
     'question-hi': 'आप कितने शयनकक्ष चाहते हैं?',
     'valid_response': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5},
+    'valid_response-en': ['1', '2', '3', '4', '5'],
+    'valid_response-ar': ['۱', '٢', '٣', '٤', '٥'],
+    'valid_response-fa': ['۱', '۲', '۳', '۴', '۵'],
+    'valid_response-ur': ['1', '2', '3', '4', '5'],
+    'valid_response-zh-CN': ['1', '2', '3', '4', '5'],
+    'valid_response-ru': ['1', '2', '3', '4', '5'],
+    'valid_response-hi': ['1', '2', '3', '4', '5'],
     'parent': 'buy__square-root',
     'children': [None] * 5
 }
