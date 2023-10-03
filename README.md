@@ -13,3 +13,6 @@ pip install numpy
 ```python
 pip install nltk
 ```
+```python
+pip install google-cloud-translate
+```
